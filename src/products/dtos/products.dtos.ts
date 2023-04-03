@@ -23,7 +23,6 @@ export class CreateProductDto {
 
   @IsNumber()
   @IsNotEmpty()
-  @IsPositive()
   readonly stock: number;
 
   @IsUrl()
@@ -31,5 +30,4 @@ export class CreateProductDto {
   readonly image: string;
 }
 
-// Se hace uso de PartialType para crear una copia de DTO de CreateProductDto pero con sus atributos opcionales
 export class UpdateProductDto extends PartialType(CreateProductDto) {}
